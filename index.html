@@ -1,0 +1,98 @@
+<!--Saskia Lampe's Website about a Website-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <title>
+        A Manual for A Manual
+    </title>
+</head>
+
+<body>
+
+<div id="progressbar" aria-hidden="true"></div>
+
+    <div>
+        <h1 class = "first">
+           Making Making Software
+        </h1>
+    </div>
+
+    
+
+    <h4 class = "first">
+    A reference manual for a reference manual for people who design and build software. <br>
+    Original website written and designed by Dan Hollick.
+    </h4>
+
+    <p class = "first">
+        Dan Hollick's website <a href="https://www.makingsoftware.com/">Making Software</a>
+        is a beautifully illustrated digital novel project aiming to explain the inner workings
+        of common technologies. <br>
+
+    </p>
+     <img src="pics/harddrive.png" alt = "hard drive" class= "downscaletwo">
+    <p class = "first">
+        So far, the site hosts a chapters on a couple of different topics with a vast scaffold of future chapters in place.
+        scrolling down reveals the table of contents, which features hover states to indicate if content is 
+        available or not. Upon actually clicking on a complete page, the user is taken to a detailed (but 
+        still very approachable) paper. 
+    </p>
+    
+     <img src="pics/floppydisk.png" alt="floppydisk" class="downscale"><br>
+
+    <p class = "first">
+       
+        The author opts to use animated SVGs for all of their front page graphics ensuring faster load times, and beautifully 
+        rendered graphics at any size. The whole site seems to be built on the "React" framework. <br> 
+        
+    </p>
+        <img src="pics/reactpic.png" alt="reactpic" class="downscaletwo" ><br>
+
+        <p>
+            fun progress bar from the site <br>
+        </p>
+         <img src="pics/progressbar.png" alt="floppydisk" class="downscalethree"><br>
+
+         <p class = "first">Other Cool Features
+         <ul>
+            <li>A blue Underline instead of a highlight (I assume the author sets the highlight color to transparent and wraps 
+                the selection but not sure... never seen this done elsewhere though so I thought it was cool.)
+            </li>
+            <li>Some very beautiful and graceful animations</li>
+            <li>Very satisfying hover states</li>
+            <li>Informative essays (somewhat) relating to software</li>
+         </ul>
+         </p>
+
+
+
+<script>
+  (function () {
+    const bar = document.getElementById('progressbar');
+    const root = document.scrollingElement || document.documentElement;
+
+    function update() {
+      const max = root.scrollHeight - root.clientHeight;
+      const pct = max > 0 ? (root.scrollTop / max) * 100 : 0;
+      bar.style.width = pct + '%';
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', update, { once: true });
+    } else {
+      update();
+    }
+    addEventListener('scroll', () => requestAnimationFrame(update), { passive: true });
+    addEventListener('resize', update);
+  })();
+</script>
+
+
+
+
+
+</body>
+<p class = "first"></p>
+</html>
